@@ -21,6 +21,29 @@ const tecnologias = [
   "Virtualización",
 ];
 
+const clientes = [
+  {
+    nombre: "La Lácteo",
+    logo: "/clientes/lalacteo6.png",
+  },
+  {
+    nombre: "Latamways",
+    logo: "/clientes/latamways4.png",
+  },
+  {
+    nombre: "Talpe Lit",
+    logo: "/clientes/talpelit4.png",
+  },
+  {
+    nombre: "Infosocio",
+    logo: "/clientes/infosocio6.png",
+  },
+  {
+    nombre: "Datuar",
+    logo: "/clientes/datuar4.png",
+  },
+];
+
 const servicios = [
   {
     icono: Monitor,
@@ -251,7 +274,39 @@ export default function Home() {
           </div>
         </div>
       </section>
+<section className="bg-gradient-to-b from-white via-blue-50/40 to-slate-50 px-6 py-24">
+  <div className="mx-auto max-w-6xl">
+    <div className="text-center">
+      <h2 className="text-4xl font-bold text-slate-900">
+        Empresas que confían en nosotros
+      </h2>
 
+      <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-blue-600"></div>
+
+      <p className="mt-6 text-lg text-slate-600">
+        Acompañamos a empresas de distintos sectores con soporte IT,
+        infraestructura, redes, backups y seguridad informática.
+      </p>
+    </div>
+
+    <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {clientes.map((cliente) => (
+        <div
+  key={cliente.nombre}
+  className="group flex h-44 items-center justify-center rounded-3xl border border-slate-200 bg-white p-6 shadow-lg transition duration-300 hover:-translate-y-2 hover:border-blue-300 hover:shadow-2xl"
+>
+          <Image
+  src={cliente.logo}
+  alt={cliente.nombre}
+  width={500}
+  height={220}
+  className="h-28 w-full object-contain"
+/>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
       <section
   id="monitoreo"
   className="bg-gradient-to-b from-slate-50 via-slate-100 to-slate-300 px-6 pt-32 pb-24"
